@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "checkClassPositive": "npx playwright test src/unitTests/checkRegistrationPositive.spec.ts"
+    "checkClassPositive": "npx playwright test src/unitTests/checkRegistrationPositive.spec.ts",
+    "checkClassNegative": "npx playwright test src/unitTests/checkRegistrationNegative.spec.ts"
   },
   "keywords": [],
   "author": "",

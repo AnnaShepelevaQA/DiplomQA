@@ -63,7 +63,6 @@ export class RegistrationForm {
     }
 
     setBirthDate(birthDateStr) {
-        // Парсинг строки даты (формат YYYY-MM-DD)
         const birthDate = new Date(birthDateStr);
         if (isNaN(birthDate.getTime())) {
             throw new Error('Invalid date format. Use YYYY-MM-DD');

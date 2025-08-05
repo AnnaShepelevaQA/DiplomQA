@@ -143,10 +143,41 @@ test.describe('Check valid Birhday date from class', () => {
         form = new RegistrationForm();
     });
 
-    test('should accept valid birth date for 13 year old', async () => {
+    test('should accept valid birth date for 15 year old', async () => {
         const testDateStr = '2010-05-20';
         form.setBirthDate(testDateStr);
   
         expect(form.getBirthDate()).toEqual(new Date(testDateStr));
-  });
+    });
+
+    test('should accept valid birth date for 29 year old', async () => {
+        const testDateStr = '1996-05-20';
+        form.setBirthDate(testDateStr);
+  
+        expect(form.getBirthDate()).toEqual(new Date('1996-05-20'));
+    });
+});
+
+
+
+test.describe('Check valid Subscription from class', () => {
+    let form: RegistrationForm;
+    
+    test.beforeEach( () => {
+        form = new RegistrationForm();
+    });
+
+    test('should set Subscription true', async () => {
+        const needSub = true;
+        form.setSubscription(needSub);
+  
+        expect(form.isSubscribedToNewsletter()).toBe(true);
+    });
+
+    test('should set Subscription false', async () => {
+        const needSub = false;
+        form.setSubscription(needSub);
+  
+        expect(form.isSubscribedToNewsletter()).toBe(false);
+    });
 });
