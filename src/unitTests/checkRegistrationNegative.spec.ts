@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { test, expect } from '@playwright/test';
 import { RegistrationForm } from '../registrationForm/registration';
 
@@ -29,7 +28,7 @@ test.describe('Check invalid First Name from class', () => {
 });
 
   test('should set boolean First Name', () => {
-    const invalidName = true;
+    const invalidName: any = true;
 
     expect(() => form.setFirstName(invalidName)).toThrowError(TypeError);
   });
@@ -62,7 +61,7 @@ test.describe('Check invalid Last Name from class', () => {
 });
 
   test('should set boolean Last Name', () => {
-    const invalidSurname = true;
+    const invalidSurname: any = true;
 
     expect(() => form.setLastName(invalidSurname)).toThrowError(TypeError);
   });

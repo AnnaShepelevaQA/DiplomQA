@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { test, expect } from '@playwright/test';
 import { RegistrationForm } from '../registrationForm/registration';
 

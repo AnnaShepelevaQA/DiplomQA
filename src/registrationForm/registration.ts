@@ -1,4 +1,11 @@
 export class RegistrationForm {
+    private firstName: string;
+    private lastName: string;
+    private email: string;
+    private password: string;
+    private birthDate: Date | null;
+    private isSubscribed: boolean;
+
     constructor() {
         this.firstName = '';
         this.lastName = '';
@@ -8,7 +15,7 @@ export class RegistrationForm {
         this.isSubscribed = false;
     }
 
-    setFirstName(name) {
+    setFirstName(name: string): void {
         if (!name.trim()) {
             throw new Error('Name cannot be empty');
         }
@@ -18,11 +25,11 @@ export class RegistrationForm {
         this.firstName = name;
     }
 
-    getFirstName() {
+    getFirstName(): string {
         return this.firstName;
     }
 
-    setLastName(surname) {
+    setLastName(surname: string): void {
         if (!surname.trim()) {
             throw new Error('LastName cannot be empty');
         }
@@ -32,11 +39,11 @@ export class RegistrationForm {
         this.lastName = surname;
     }
 
-    getLastName() {
+    getLastName(): string {
         return this.lastName;
     }
 
-    setEmail(email) {
+    setEmail(email: string): void {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             throw new Error('Invalid email format');
@@ -44,11 +51,11 @@ export class RegistrationForm {
         this.email = email;
     }
 
-    getEmail() {
+    getEmail(): string {
         return this.email;
     }
 
-    setPassword(password) {
+    setPassword(password: string): void {
         if (password.length < 5) {
             throw new Error('Password must be at least 5 characters long');
         }
@@ -58,11 +65,11 @@ export class RegistrationForm {
         this.password = password;
     }
 
-    checkPassword(password) {
+    checkPassword(password: string): boolean {
         return this.password === password;
     }
 
-    setBirthDate(birthDateStr) {
+    setBirthDate(birthDateStr: string): void {
         const birthDate = new Date(birthDateStr);
         if (isNaN(birthDate.getTime())) {
             throw new Error('Invalid date format. Use YYYY-MM-DD');
@@ -78,19 +85,19 @@ export class RegistrationForm {
         this.birthDate = birthDate;
     }
 
-    getBirthDate() {
+    getBirthDate(): Date | null {
         return this.birthDate;
     }
 
-    setSubscription(isSubscribed) {
+    setSubscription(isSubscribed: boolean): void {
         this.isSubscribed = isSubscribed;
     }
 
-    isSubscribedToNewsletter() {
+    isSubscribedToNewsletter(): boolean {
         return this.isSubscribed;
     }
 
-    validate() {
+    validate(): boolean {
         return !!(
             this.firstName &&
             this.lastName &&
@@ -100,7 +107,14 @@ export class RegistrationForm {
         );
     }
 
-    getFormData() {
+    getFormData(): {
+        firstName: string;
+        lastName: string;
+        email: string;
+        password: string;
+        birthDate: Date | null;
+        isSubscribed: boolean;
+    } {
         return {
             firstName: this.firstName,
             lastName: this.lastName,
