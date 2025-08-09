@@ -3,6 +3,14 @@
     "module": "commonjs",
     "target": "es6",
     "esModuleInterop": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "types": [
+      "jest",
+      "superagent"
+    ],
     "strict": true
   },
   "include": [

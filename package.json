@@ -3,17 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "checkClassPositive": "npx playwright test src/unitTests/checkRegistrationPositive.spec.ts",
-    "checkClassNegative": "npx playwright test src/unitTests/checkRegistrationNegative.spec.ts"
+    "checkClassNegative": "npx playwright test src/unitTests/checkRegistrationNegative.spec.ts",
+    "testApi": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.54.2",
+    "@types/dotenv": "^6.1.1",
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.1.0",
+    "@types/superagent": "^8.1.9",
+    "dotenv": "^17.2.1",
+    "jest": "^30.0.5",
+    "superagent": "^10.2.3",
+    "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
   }
 }
