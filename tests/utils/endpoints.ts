@@ -4,7 +4,7 @@ export const endpoints = {
     posts: {
         create: '/posts',
         getById: (id: number | string) => `/posts/${id}`,
-        getByComments: (id: number | string) => `/posts/${id}/comments`,
+        getByPosts: (id: number | string) => `/posts/${id}/comments`,
         update: (id: number | string) => `/posts/${id}`,
         delete: (id: number | string) => `/posts/${id}`
   },

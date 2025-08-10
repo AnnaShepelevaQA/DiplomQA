@@ -16,7 +16,7 @@
   "include": [
     "tests",
     "data",
-    "utils",
+    "tests/utils",
     "src"
   ]
 }
