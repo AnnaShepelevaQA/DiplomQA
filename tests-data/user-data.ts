@@ -6,3 +6,8 @@ export const testUser = {
       name: "Pirates"
     }
 }
+
+export const testUser2 = {
+    userId: 0,
+    name: "Capitain Jack Sparrow"
+}
