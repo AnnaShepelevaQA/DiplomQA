@@ -16,7 +16,8 @@ test.describe('Check home page', async()=> {
 
     test("Check dropDown panel from News", async () => {
         const homePage = await PageFactory.getHomePage(browser);
-        await homePage.goToPage;
+        await homePage.goToPage();
+        // await homePage.cookieBanner();
 
         homePage.dropDownNews();
 
@@ -24,5 +25,15 @@ test.describe('Check home page', async()=> {
 
         await expect(checkMenu).toBeVisible({timeout: 5000});
     })
+
+    test("Check button Apple iPhone", async () => {
+        const homePage = await PageFactory.getHomePage(browser);
+        await homePage.goToPage();
+        // await homePage.cookieBanner();
+
+        await homePage.navigationIphone();
+
+        await expect(homePage.page).toHaveURL(/campaign=iphone/)
+    });
 
 });

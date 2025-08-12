@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "checkClassPositive": "npx playwright test src/unitTests/checkRegistrationPositive.spec.ts",
-    "checkClassNegative": "npx playwright test src/unitTests/checkRegistrationNegative.spec.ts",
-    "testApi": "jest",
-    "testsUi": "npx playwright test tests/ui/ --ui --headed"
+    "unit:positive": "npx playwright test src/unitTests/checkRegistrationPositive.spec.ts",
+    "unit:negative": "npx playwright test src/unitTests/checkRegistrationNegative.spec.ts",
+    "test:api": "jest",
+    "tests:ui": "npx playwright test tests/ui/ --ui --headed"
   },
   "keywords": [],
   "author": "",
