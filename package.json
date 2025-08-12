@@ -6,7 +6,8 @@
   "scripts": {
     "checkClassPositive": "npx playwright test src/unitTests/checkRegistrationPositive.spec.ts",
     "checkClassNegative": "npx playwright test src/unitTests/checkRegistrationNegative.spec.ts",
-    "testApi": "jest"
+    "testApi": "jest",
+    "testsUi": "npx playwright test tests/ui/ --ui --headed"
   },
   "keywords": [],
   "author": "",
