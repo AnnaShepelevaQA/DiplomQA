@@ -7,7 +7,9 @@
     "unit:positive": "npx playwright test src/unitTests/checkRegistrationPositive.spec.ts",
     "unit:negative": "npx playwright test src/unitTests/checkRegistrationNegative.spec.ts",
     "test:api": "jest",
-    "tests:ui": "npx playwright test tests/ui/ --ui"
+    "tests:ui": "npx playwright test tests/ui/",
+    "allure:reporter": "npx allure generate ./allure-results",
+    "allure:open": "npx allure open ./allure-report"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +25,9 @@
     "superagent": "^10.2.3",
     "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "allure-playwright": "^3.3.3"
   }
 }
