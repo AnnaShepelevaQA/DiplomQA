@@ -4,13 +4,16 @@ import { HomePage } from '../pages/HomePage';
 test.describe('Onliner Home Page Tests', () => {
 
     test("Check dropDown panel from News", async ({page}) => {
-    const homePage = new HomePage(page);
-    await homePage.goToPage();
+        //arrange
+        const homePage = new HomePage(page);
+        await homePage.goToPage();
     
-    await homePage.topMenuNews.first().hover();
+        //act
+        await homePage.topMenuNews.first().hover();
     
-    const checkMenu = homePage.dropDownMenu();
-    await expect(checkMenu).toBeVisible({timeout: 10000});
+        //assert
+        const checkMenu = homePage.dropDownMenu();
+        await expect(checkMenu).toBeVisible({timeout: 10000});
 });
     
     test("Check button Apple iPhone", async ({page}) => {
