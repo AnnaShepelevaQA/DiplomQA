@@ -1,35 +1,23 @@
 import { test, expect, Browser } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
-import { PageFactory } from '../factories/PageFactory';
-import { BrowserSingleton } from '../utils/core/BrowserSingleton';
 
 test.describe('Check home page', async()=> {
     let browser: Browser;
 
-    test.beforeAll(async () => {
-        browser = await BrowserSingleton.getInstance();
-    });
-
-    test.beforeAll(async () => {
-        browser = await BrowserSingleton.getInstance();
-    });
-
-    test("Check dropDown panel from News", async () => {
-        const homePage = await PageFactory.getHomePage(browser);
+    test("Check dropDown panel from News", async ({page}) => {
+        const homePage = new HomePage(page);
         await homePage.goToPage();
-        // await homePage.cookieBanner();
 
         homePage.dropDownNews();
 
-        const checkMenu = await homePage.dropDownMenu();
+        const checkMenu = homePage.dropDownMenu();
 
         await expect(checkMenu).toBeVisible({timeout: 5000});
     })
 
-    test("Check button Apple iPhone", async () => {
-        const homePage = await PageFactory.getHomePage(browser);
+    test("Check button Apple iPhone", async ({page}) => {
+        const homePage = await new HomePage(page);;
         await homePage.goToPage();
-        // await homePage.cookieBanner();
 
         await homePage.navigationIphone();
 
