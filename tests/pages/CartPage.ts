@@ -2,16 +2,12 @@ import { Page, Locator } from '@playwright/test';
 
 export class CartPage {
     public readonly page: Page;
-    
-    // Локаторы элементов каталога
     public readonly catalogLink: Locator;
     public readonly phoneCategory: Locator;
     public readonly tvCategory: Locator;
     public readonly laptopCategory: Locator;
     public readonly firstProductCard: Locator;
     public readonly addToCartButton: Locator;
-    
-    // Локаторы элементов корзины
     public readonly cartItems: Locator;
     public readonly itemTitle: Locator;
     public readonly removeButton: Locator;
@@ -22,14 +18,12 @@ export class CartPage {
 
     constructor(page: Page) {
         this.page = page;
-        
         this.catalogLink = page.locator('//*[@class="b-main-navigation__text" and text()="Каталог"]/parent::a');
         this.phoneCategory = page.locator('//*[contains(@class, "catalog-navigation-list__category")]//*[contains(text(), "Мобильные телефоны")]');
         this.tvCategory = page.locator('//*[contains(@class, "catalog-navigation-list__category")]//*[contains(text(), "Телевизоры")]');
         this.laptopCategory = page.locator('//*[contains(@class, "catalog-navigation-list__category")]//*[contains(text(), "Ноутбуки")]');
         this.firstProductCard = page.locator('(//*[contains(@class, "catalog-form__offers-item") and not(contains(@style, "none"))])[1]');
         this.addToCartButton = page.locator('(//*[contains(@class, "catalog-form__button") and contains(text(), "В корзину")])[1]');
-        
         this.cartItems = page.locator('//*[contains(@class, "cart-form__offers-item")]');
         this.itemTitle = page.locator('(//*[contains(@class, "cart-form__description_part")]//a)[1]');
         this.removeButton = page.locator('(//*[contains(@class, "cart-form__button_remove")])[1]');
